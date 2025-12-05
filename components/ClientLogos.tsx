@@ -40,7 +40,7 @@ const ErtCreditLogo = () => (
 const RecordedRidesLogo = () => (
   <LogoWrapper>
     <div className="flex items-center font-black text-lg italic tracking-tighter transform -skew-x-6">
-      <span className="text-[#00AEEF] style={{textShadow: '1px 1px 0 rgba(0,0,0,0.1)'}}">RECORDED</span>
+      <span className="text-[#00AEEF]" style={{textShadow: '1px 1px 0 rgba(0,0,0,0.1)'}}>RECORDED</span>
       <span className="text-[#FFC107] ml-0.5" style={{textShadow: '1px 1px 0 rgba(0,0,0,0.1)'}}>RIDES</span>
     </div>
   </LogoWrapper>
