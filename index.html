@@ -25,7 +25,7 @@
     <meta property="twitter:image" content="https://placehold.co/1200x630/F97316/ffffff?text=Yscale+Studio" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png?v=5" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +44,20 @@
                 orange: '#F97316',
                 dark: '#111827',
               }
+            },
+            animation: {
+              'scroll-left': 'scroll-left 50s linear infinite',
+              'scroll-right': 'scroll-right 50s linear infinite',
+            },
+            keyframes: {
+              'scroll-left': {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              'scroll-right': {
+                '0%': { transform: 'translateX(-50%)' },
+                '100%': { transform: 'translateX(0)' },
+              },
             }
           }
         }
