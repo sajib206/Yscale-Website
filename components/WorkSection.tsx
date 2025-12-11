@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowUpRight, Sparkles, Cat, MessageSquare, ShoppingBag, Coffee } from 'lucide-react';
+import { Sparkles, Cat, MessageSquare, ShoppingBag, Coffee, Upload, Mic, Send, Star, MapPin } from 'lucide-react';
 
 // --- Types ---
 
@@ -18,48 +18,94 @@ interface WorkCardProps {
 // --- Visual Mocks (CSS-only UI representations) ---
 
 const OrchHireVisual = () => (
-  <div className="w-full h-full bg-[#0F1115] p-6 relative overflow-hidden flex flex-col items-center">
-    {/* Top Bar */}
-    <div className="w-full flex justify-between items-center mb-6 border-b border-gray-800 pb-4">
-      <div className="flex gap-2">
-        <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
-        <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-        <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
-      </div>
-      <div className="text-gray-500 text-xs">orchhire.ai</div>
-    </div>
+  <div className="w-full h-full bg-[#050505] relative flex flex-col items-center justify-center p-6 md:p-8 overflow-hidden">
+    {/* Ambient Glows */}
+    <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-blue-900/20 to-transparent blur-3xl" />
+    <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-purple-900/20 to-transparent blur-3xl" />
 
-    {/* Dashboard Content */}
-    <div className="w-full max-w-sm">
-      <div className="text-center mb-6">
-        <h4 className="text-blue-400 text-sm font-medium mb-1">Hiring That Thinks Ahead</h4>
-        <div className="text-gray-400 text-xs">Reactive · Proactive · Autonomous</div>
-      </div>
+    <div className="relative w-full max-w-[340px] z-10 flex flex-col gap-4">
+        
+        {/* Prompt Text */}
+        <div className="text-center mb-2">
+            <p className="text-gray-400 text-xs font-medium leading-relaxed">
+              Simply describe your requirements in natural language and watch our AI find the perfect candidates.
+            </p>
+        </div>
 
-      {/* Stats Row */}
-      <div className="grid grid-cols-3 gap-4 mb-6">
-        {[
-          { label: 'Screening', val: '85%' },
-          { label: 'Qualified', val: '94%' },
-          { label: 'Time Saved', val: '67%' },
-        ].map((s, i) => (
-          <div key={i} className="bg-gray-800/50 rounded-lg p-3 text-center border border-gray-700/50">
-            <div className="text-white font-bold text-lg">{s.val}</div>
-            <div className="text-gray-500 text-[10px]">{s.label}</div>
-          </div>
-        ))}
-      </div>
+        {/* Search Input */}
+        <div className="bg-[#111] border border-gray-800 rounded-xl p-3 shadow-2xl">
+            <div className="text-[10px] text-gray-500 font-bold tracking-widest uppercase mb-3 px-1">Natural Language Search</div>
+            <div className="bg-[#1A1A1A] border border-gray-700/50 rounded-lg p-2.5 flex items-center gap-3">
+                <span className="text-gray-300 text-xs flex-1 truncate">Find 2-3 years experience Frontend Devs...</span>
+                <div className="flex items-center gap-2 text-gray-500">
+                     <Upload size={14} className="hover:text-gray-300 cursor-pointer transition-colors"/>
+                     <Mic size={14} className="hover:text-gray-300 cursor-pointer transition-colors"/>
+                     <div className="bg-blue-600 p-1.5 rounded-md text-white hover:bg-blue-500 transition-colors cursor-pointer">
+                        <Send size={12} fill="currentColor" />
+                     </div>
+                </div>
+            </div>
+        </div>
 
-      {/* Central Circle UI */}
-      <div className="relative w-40 h-40 mx-auto flex items-center justify-center">
-         <div className="absolute inset-0 border border-blue-500/20 rounded-full animate-pulse"></div>
-         <div className="absolute inset-4 border border-blue-500/40 rounded-full"></div>
-         <div className="w-20 h-20 bg-blue-600/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-blue-500/50">
-            <div className="text-blue-300 text-xs text-center font-medium">AI<br/>Talent</div>
-         </div>
-         {/* Orbiting dots */}
-         <div className="absolute top-0 left-1/2 w-2 h-2 bg-blue-400 rounded-full -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_rgba(96,165,250,0.8)]"></div>
-      </div>
+        {/* Candidates List */}
+        <div className="flex flex-col gap-3">
+            
+            {/* Candidate 1 */}
+            <div className="bg-[#111] border border-gray-800 rounded-xl p-3 flex items-center gap-3 shadow-xl">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-xs text-white font-medium overflow-hidden border border-gray-700">
+                   <img src="https://i.pravatar.cc/150?u=alex" alt="Alex" className="w-full h-full object-cover opacity-90" />
+                </div>
+                <div className="flex-1 min-w-0">
+                    <div className="flex justify-between items-center mb-0.5">
+                        <h4 className="text-white text-sm font-semibold truncate">Alex Johnson</h4>
+                        <div className="flex items-center gap-1 text-yellow-500 text-[10px] font-bold bg-yellow-500/10 px-1.5 py-0.5 rounded">
+                            <Star size={8} fill="currentColor" /> 4.9
+                        </div>
+                    </div>
+                    <p className="text-gray-500 text-[10px] truncate">Senior Frontend Developer at TechCorp</p>
+                    <div className="flex items-center gap-1 text-gray-600 text-[10px] mt-0.5">
+                        <MapPin size={8} /> Bangalore, India
+                    </div>
+                </div>
+            </div>
+
+            {/* Candidate 2 */}
+            <div className="bg-[#111] border border-gray-800 rounded-xl p-3 flex items-center gap-3 shadow-xl opacity-60 scale-[0.98]">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 overflow-hidden border border-gray-700">
+                   <img src="https://i.pravatar.cc/150?u=priya" alt="Priya" className="w-full h-full object-cover opacity-90" />
+                </div>
+                <div className="flex-1 min-w-0">
+                    <div className="flex justify-between items-center mb-0.5">
+                        <h4 className="text-white text-sm font-semibold truncate">Priya Sharma</h4>
+                        <div className="flex items-center gap-1 text-yellow-500 text-[10px] font-bold bg-yellow-500/10 px-1.5 py-0.5 rounded">
+                            <Star size={8} fill="currentColor" /> 4.8
+                        </div>
+                    </div>
+                    <p className="text-gray-500 text-[10px] truncate">Frontend Engineer at StartupXYZ</p>
+                    <div className="flex items-center gap-1 text-gray-600 text-[10px] mt-0.5">
+                        <MapPin size={8} /> Bengaluru, India
+                    </div>
+                </div>
+            </div>
+
+             {/* Candidate 3 */}
+             <div className="bg-[#111] border border-gray-800 rounded-xl p-3 flex items-center gap-3 shadow-xl opacity-30 scale-[0.96]">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 overflow-hidden border border-gray-700">
+                    <div className="w-full h-full bg-gray-800"></div>
+                </div>
+                <div className="flex-1 min-w-0">
+                    <div className="flex justify-between items-center mb-0.5">
+                        <h4 className="text-white text-sm font-semibold truncate">Rahul Patel</h4>
+                        <div className="flex items-center gap-1 text-yellow-500 text-[10px] font-bold bg-yellow-500/10 px-1.5 py-0.5 rounded">
+                            <Star size={8} fill="currentColor" /> 4.7
+                        </div>
+                    </div>
+                    <p className="text-gray-500 text-[10px] truncate">Software Developer at InnovateLabs</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
   </div>
 );
